@@ -1,0 +1,22 @@
+{
+  "name": "chat_room",
+  "version": "1.0.0",
+  "description": "Basic chatroom with user login and registration functionality",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bradley Stocks",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "http": "0.0.0",
+    "mongoose": "^4.11.9",
+    "req-flash": "0.0.3",
+    "socket.io": "^2.0.3"
+  }
+}

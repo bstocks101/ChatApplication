@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--Adapted from the chat.io application by OmarElGabry
+https://github.com/OmarElGabry/chat.io -->
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>FSE Chat</title>
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+  <div class="login-page">
+    <div class="form">
+      <div style="margin-top: 18px;">
+        <form action="/register" class="register-form" method="post" >
+          <h1>Register</h1>
+          <%if (failedRegister){%>
+            <p>That is not a unique user name, please try another name</p>
+            <%}%>
+            <input type="text" name="username" placeholder="username"/>
+            <input type="password" name="password" placeholder="password"/>
+            <button type="submit">create</button>
+            <p class="message">Already registered? <a href="#">Login</a></p>
+          </form>
+          <form action="/login" class="login-form" method="post">
+            <h1>Login</h1>
+            <%if (failedLogin){%>
+              <p>Incorrect username and password combination. Please try again or register a new user.</p>
+              <%}%>
+              <%if (newRegister){%>
+                <p>New user added! Please sign in!</p>
+                <%}%>
+                <input type="text" name="username" placeholder="username"/>
+                <input type="password" name="password" placeholder="password"/>
+                <button type="submit">login</button>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
+              </form>
+            </div>
+          </div> <!-- end form -->
+        </div> <!-- end login container -->
+
+
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        <script>
+        $('.message a').click(function(){
+          $('form, .social-buttons, .form-line').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+        </script>
+        <% if(showRegisterForm != null && showRegisterForm === true) { %>
+          <script>
+          $('.register-form').show(); $('.login-form, .social-buttons, .form-line').hide();
+          </script>
+          <%}%>
+        </body>
+        </html>
